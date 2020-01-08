@@ -19,7 +19,7 @@ echo "" >${OPT}
 WIFI_DEV=$(ip link | awk '{print $2}' | grep -i "wl" | sed 's/://')
 _PlsWait="\nPlease wait...  Bitte warten... Attendere prego... Vennligst Vent... Por favor espera...\n"
 
-# Check there is an active ethernet connection. Wait a bit for dhcpcd.
+# Check there is an active ethernet connection. Wait a bit for networkmanager.
 please_wait() {
 
 dialog --backtitle "$VERSION" --title " Searching for Network Connection " --infobox "$_PlsWait" 0 0
@@ -30,9 +30,9 @@ sleep 8
 # Run if the ethernet connection is not already enabled
 ether_connect() {
 
-if [[ $(systemctl status dhcpcd | grep "running") == "" ]]; then
-   systemctl enable dhcpcd
-   systemctl start dhcpcd
+if [[ $(systemctl status networkmanager | grep "running") == "" ]]; then
+   systemctl enable NetworkManager
+   systemctl start NetworkManager
 fi
 
 dialog --backtitle "$VERSION" --title " Connecting to Ethernet " --infobox "$_PlsWait" 0 0
@@ -71,11 +71,11 @@ download_aif() {
   FOLDER=""
   case $(cat ${OPT}) in
        "1") # Stable (Net)
-            DOWNLOAD=https://github.com/tuxarch/aif/archive/master.zip
+            DOWNLOAD=https://github.com/archtrorg/aif/archive/master.zip
             FOLDER=/aif-master/aif
             ;;
        "2") # Development Version
-            DOWNLOAD=https://github.com/tuxarch/aif-dev/archive/master.zip
+            DOWNLOAD=https://github.com/archtrorg/aif-dev/archive/master.zip
             FOLDER=/aif-dev-master/aif
             ;;
          *) break;
