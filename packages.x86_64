@@ -55,15 +55,14 @@ sudo
 tcpdump
 testdisk
 usb_modeswitch
-vim-minimal
 vpnc
 wget
 wireless_tools
-wpa_actiond
 wvdial
 xl2tpd
-
-
+nano
+wget
+wireless_tools
 efitools
 hwinfo
 unzip
@@ -72,3 +71,8 @@ git
 iw
 wpa_supplicant
 terminus-font
+networkmanager
+iwd
+network-manager-applet
+rp-pppoe
+reflector 
