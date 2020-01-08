@@ -2,11 +2,11 @@ architect-iso
 ==================
 
 ### Source for Architect iso builds with
-`cli_installer` [aif](https://github.com/tuxarch/aif)
-`cli_installer-dev` [aif-dev](https://github.com/tuxarch/aif-dev)
+`cli_installer` [aif](https://github.com/archtrorg/aif)
+`cli_installer-dev` [aif-dev](https://github.com/archtrorg/aif-dev)
 
 ### Build
-git clone https://github.com/tuxarch/architect-iso
+git clone https://github.com/archtrorg/architect-iso
 
 cd architect-iso
 
